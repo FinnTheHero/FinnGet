@@ -13,12 +13,13 @@ FinnGet is designed specifically for Windows systems and can be installed and ru
 
 ## Installation
 **! important !**
-**FinnGet requires execution policy to be set as RemoteSigned**
-**Open PowerShell as an administrator and run the following command**
+
+**FinnGet requires execution policy to be set as RemoteSigned.**
+**Open PowerShell as an administrator and run the following command.**
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
-**This will make local scripts executable, but remote scripts will still need to be signed**
+**This will make local scripts executable, but remote scripts will still need to be signed.**
 **However, it still not work on windows11**
 ### Windows10
 **Note: At the time of writing this README, the project is not yet available on the PowerShell Gallery.**
