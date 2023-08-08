@@ -1,8 +1,8 @@
-```markdown
 # FinnGet
 
-FinnGet is a Windows PowerShell script that provides similar functionality to tools like `screenfetch` or `neofetch`. It displays the Windows logo and system specifications, giving you a quick overview of your system information. FinnGet is designed specifically for Windows systems and can be installed and run using PowerShell.
-```
+FinnGet is a Windows PowerShell script that provides similar functionality to tools like `screenfetch` or `neofetch`.
+It displays the Windows logo and system specifications, giving you a quick overview of your system information.
+FinnGet is designed specifically for Windows systems and can be installed and run using PowerShell.
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
