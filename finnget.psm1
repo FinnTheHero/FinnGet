@@ -1,8 +1,4 @@
-#### Screenfetch for powershell
-#### Author Julian Chow
-
-
-Function finnget($distro)
+Function finnget()
 {
     $AsciiArt = . Get-WindowsArt;
 
