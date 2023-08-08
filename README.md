@@ -20,7 +20,7 @@ FinnGet is designed specifically for Windows systems and can be installed and ru
 Set-ExecutionPolicy RemoteSigned
 ```
 **This will make local scripts executable, but remote scripts will still need to be signed.**
-**However, it still not work on windows11**
+**However, its still not working on windows11**
 ### Windows10
 **Note: At the time of writing this README, the project is not yet available on the PowerShell Gallery.**
 **The following installation instructions are temporary and may change once the project is published to the gallery.**
