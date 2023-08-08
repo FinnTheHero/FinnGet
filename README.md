@@ -52,5 +52,3 @@ Contributions to FinnGet are welcome! If you'd like to contribute new features, 
 
 **Disclaimer:** FinnGet is not affiliated with `screenfetch` or `neofetch`. The purpose of this project is to provide a similar experience on Windows systems using PowerShell.
 ```
-
-Feel free to customize the content according to your project's specific details and requirements. Once you have set up your project on PowerShell Gallery and made any necessary updates, remember to update the installation and usage instructions accordingly.
