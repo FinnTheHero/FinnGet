@@ -5,12 +5,15 @@ It displays the Windows logo and system specifications, giving you a quick overv
 FinnGet is designed specifically for Windows systems and can be installed and run using PowerShell.
 ## Table of Contents
 - [Installation](#installation)
+   - [Windows10](#windows10)
+   - [Windows11](#windows11)
 - [Usage](#usage)
 - [Project Status](#project-status)
 - [Contributing](#contributing)
 
 ## Installation
 
+### Windows10
 **Note: At the time of writing this README, the project is not yet available on the PowerShell Gallery.**
 **The following installation instructions are temporary and may change once the project is published to the gallery.**
 
@@ -24,6 +27,12 @@ FinnGet is designed specifically for Windows systems and can be installed and ru
    Move-Item -Path .\FinnGet -Destination $env:ProgramFiles\WindowsPowerShell\Modules
    ```
 6. You can now use the FinnGet command in any PowerShell terminal.
+
+### Windows11
+
+**FinnGet doesnt work on windows 11 as of now because project is unsigned**
+**If you manage to make it work on windows 11 please sheare how, Thanks in advance!**
+
 ## Usage
 
 Once FinnGet is installed, you can use it to display system information in your PowerShell terminal. Open a PowerShell terminal and type:
