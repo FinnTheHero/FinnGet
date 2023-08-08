@@ -18,11 +18,13 @@ FinnGet is a Windows PowerShell script that provides similar functionality to to
 3. Open a PowerShell terminal with administrator privileges.
 4. Navigate to the extracted folder using the `cd` command.
 5. Move the FinnGet folder to the PowerShell modules directory:
+```
    ```powershell
    Move-Item -Path .\FinnGet -Destination $env:ProgramFiles\WindowsPowerShell\Modules
    ```
+```markdown
 6. You can now use the FinnGet command in any PowerShell terminal.
-
+```
 ## Usage
 
 Once FinnGet is installed, you can use it to display system information in your PowerShell terminal. Open a PowerShell terminal and type:
@@ -41,13 +43,14 @@ FinnGet is currently in development. While the core functionality is in place, s
 
 Contributions to FinnGet are welcome! If you'd like to contribute new features, improvements, or bug fixes, please follow these steps:
 
+```markdown
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix: `git checkout -b feature-name`
 3. Make your changes and test thoroughly.
 4. Commit your changes with clear commit messages.
 5. Push your branch to your forked repository.
 6. Create a pull request explaining your changes and why they should be merged.
-
+```
 ---
 
 **Disclaimer:** FinnGet is not affiliated with `screenfetch` or `neofetch`. The purpose of this project is to provide a similar experience on Windows systems using PowerShell.
