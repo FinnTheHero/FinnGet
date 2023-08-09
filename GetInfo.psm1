@@ -17,6 +17,7 @@ Function Get-SystemSpecifications()
     $RAM = Get-RAM;
     $Disks = Get-Disks;
     $emptySpace = "";
+    $disVer = "1.3";
 
     [System.Collections.ArrayList] $SystemInfoCollection = 
         $UserInfo,
@@ -32,7 +33,9 @@ Function Get-SystemSpecifications()
         $emptySpace,
         $CPU,
         $GPU,
-        $RAM;
+        $RAM,
+        $emptySpace,
+        $disVer;
 
     foreach ($Disk in $Disks)
     {
@@ -59,6 +62,8 @@ Function Get-LineToTitleMappings()
         11 = "CPU: ";
         12 = "GPU ";
         13 = "RAM: ";
+        14 = "";
+        15 = "FinnGet Version: ";
     };
 
     return $TitleMappings;
