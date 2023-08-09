@@ -13,6 +13,7 @@
       - [Windows11](#windows11)
       - [Execution Policy](#execution-policy)
       - [Security Warning](#security-warning)
+   - [Update](#update)
    - [Usage](#usage)
    - [Project Status](#project-status)
    - [Contributing](#contributing)
@@ -62,6 +63,13 @@
    **Some systems have security warning and will be annoying as you get asked to give script permission to run every time, To stop it from asking for permission you can runn following command:**
    ```powershell
    Set-ExecutionPolicy bypass
+   ```
+   
+## Update
+
+   **If you already have FinnGet installed from PowerShell gallery and want to update to a newer version, run following command**
+   ```powershell
+   Install-Module -Name finnget -Force
    ```
 
 ## Usage
