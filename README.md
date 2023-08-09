@@ -19,22 +19,6 @@
 
 ## Installation
 
-   ### Execution-Policy
-
-   **FinnGet requires execution policy to be set as RemoteSigned. Open PowerShell as an administrator and run the following command.**
-   ```powershell
-   Set-ExecutionPolicy RemoteSigned
-   ```
-   **This will make local scripts executable, but remote scripts will still need to be signed.**
-   **However, its still not working on windows11**
-
-   ### Security-warning
-   
-   **Some systems have security warning and will be annoying as you get asked to give script permission to run every time, To stop it from asking for permission you can runn following command:**
-   ```powershell
-   Set-ExecutionPolicy bypass
-   ```
-   
    ### Windows10
 
    #### Manual
@@ -62,6 +46,23 @@
 
    **Note: FinnGet doesnt work on windows 11 as of now, because project is unsigned.**
    **If you manage to make it work on windows 11 please sheare how, Thanks in advance!**
+
+   
+   ### Execution-Policy
+
+   **FinnGet requires execution policy to be set as RemoteSigned. Open PowerShell as an administrator and run the following command.**
+   ```powershell
+   Set-ExecutionPolicy RemoteSigned
+   ```
+   **This will make local scripts executable, but remote scripts will still need to be signed.**
+   **However, its still not working on windows11**
+
+   ### Security-warning
+   
+   **Some systems have security warning and will be annoying as you get asked to give script permission to run every time, To stop it from asking for permission you can runn following command:**
+   ```powershell
+   Set-ExecutionPolicy bypass
+   ```
 
 ## Usage
 
