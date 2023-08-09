@@ -1,5 +1,9 @@
 Add-Type -AssemblyName System.Windows.Forms
 
+Function Get-Version(){
+    return "1.2";
+}
+
 Function Get-SystemSpecifications() 
 {
 
