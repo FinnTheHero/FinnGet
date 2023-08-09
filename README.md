@@ -54,9 +54,9 @@
 
    **FinnGet is now uploaded to PowerShell Gallery. Open PowerShell as administrator and run following script.**
 
-      ```powershell
-      Install-Module -Name finnget -scope AllUsers
-      ```
+   ```powershell
+   Install-Module -Name finnget -scope AllUsers
+   ```
    
    ### Windows11
 
