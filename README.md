@@ -6,6 +6,8 @@ FinnGet is designed specifically for Windows systems and can be installed and ru
 ## Table of Contents
 - [Installation](#installation)
    - [Windows10](#windows10)
+      -[Manual](#manual)
+      -[Auto](#auto)
    - [Windows11](#windows11)
    - [Execution Policy](#execution-policy)
    - [Security Warning](#security-warning)
@@ -31,6 +33,9 @@ Set-ExecutionPolicy bypass
 ```
 
 ### Windows10
+
+#### Manual
+
 **Note: At the time of writing this README, the project is not yet available on the PowerShell Gallery.**
 **The following installation instructions are temporary and may change once the project is published to the gallery.**
 
@@ -44,6 +49,14 @@ Set-ExecutionPolicy bypass
    Move-Item -Path .\FinnGet -Destination $env:ProgramFiles\WindowsPowerShell\Modules
    ```
 6. You can now use the FinnGet command in any PowerShell terminal.
+
+#### Auto
+
+**FinnGet is now uploaded to PowerShell Gallery. Open PowerShell as administrator and run following script.**
+
+```powershell
+Install-Module -Name finnget -scope AllUsers
+```
 
 ### Windows11
 
