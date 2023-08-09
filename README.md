@@ -37,7 +37,7 @@
    
    #### Auto
 
-   **FinnGet is now uploaded to PowerShell Gallery. Open PowerShell as administrator and run following script.**
+   FinnGet is now uploaded to PowerShell Gallery. Open PowerShell as administrator and run following command:
 
    ```powershell
    Install-Module -Name finnget -scope AllUsers
@@ -51,23 +51,26 @@
    
    ### Execution-Policy
 
-   **FinnGet requires execution policy to be set as RemoteSigned. Open PowerShell as an administrator and run the following command.**
+   FinnGet requires execution policy to be set as RemoteSigned. Open PowerShell as an administrator and run the following command:
+   
    ```powershell
    Set-ExecutionPolicy RemoteSigned
    ```
-   **This will make local scripts executable, but remote scripts will still need to be signed.**
-   **However, its still not working on windows11**
+   This will make local scripts executable, but remote scripts will still need to be signed.
+   However, its still not working on windows11
 
    ### Security-warning
    
-   **Some systems have security warning and will be annoying as you get asked to give script permission to run every time, To stop it from asking for permission you can runn following command:**
+   Some systems have security warning and will be annoying as you get asked to give script permission to run every time, To stop it from asking for permission you can runn following command:
+
    ```powershell
    Set-ExecutionPolicy bypass
    ```
-   
+
 ## Update
 
-   **If you already have FinnGet installed from PowerShell gallery and want to update to a newer version, run following command**
+   If you already have FinnGet installed from PowerShell gallery and want to update to a newer version, run following command:
+
    ```powershell
    Install-Module -Name finnget -Force
    ```
