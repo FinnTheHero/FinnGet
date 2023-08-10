@@ -17,7 +17,7 @@ Function Get-SystemSpecifications()
     $RAM = Get-RAM;
     $Disks = Get-Disks;
     $emptySpace = "";
-    $disVer = "1.6";
+    $disVer = "1.7";
 
     [System.Collections.ArrayList] $SystemInfoCollection = 
         $UserInfo,
@@ -172,7 +172,7 @@ Function Get-Disks {
 
                 $formattedDisk = "Optical Disk $diskID $usedDiskSizeGB GB / $diskSizeGB GB ($usedDiskPercent%)"
             } else {
-                $formattedDisk = "Optical Disk $diskID -- Empty --"
+                $formattedDisk = "Optical Drive $diskID -- Empty --"
             }
         } elseif ($driveType -eq 3) {
 	        if ($diskSizeGB -gt 0) {
