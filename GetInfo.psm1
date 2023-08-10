@@ -17,7 +17,7 @@ Function Get-SystemSpecifications()
     $RAM = Get-RAM;
     $Disks = Get-Disks;
     $emptySpace = "";
-    $disVer = "1.4";
+    $disVer = "1.5";
 
     [System.Collections.ArrayList] $SystemInfoCollection = 
         $UserInfo,
@@ -156,7 +156,7 @@ Function Get-RAM {
 Function Get-Disks {
     $formattedDisks = @()
 
-    $logicalDisks = Get-WmiObject Win32_LogicalDisk | Where-Object { $_.DeviceID -match '^[A-Z]:' }
+    $logicalDisks = Get-CimInstance Win32_LogicalDisk | Where-Object { $_.DeviceID -match '^[A-Z]:' }
 
     foreach ($logicalDisk in $logicalDisks) {
         $diskID = $logicalDisk.DeviceId
