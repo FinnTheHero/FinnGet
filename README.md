@@ -1,14 +1,13 @@
 # FinnGet
 
-FinnGet is a Windows PowerShell script that offers similar functionality to tools like `screenfetch` or `neofetch`, providing a quick overview of your system information. It displays the Windows logo and system specifications, designed specifically for Windows systems. You can install and run FinnGet using PowerShell.
+FinnGet is a Windows PowerShell script that offers similar functionality to tools like `screenfetch` or `neofetch`, providing a quick overview of your system information. It displays the Windows logo and system specifications, designed specifically for Windows systems, including Windows 11 and Windows 10. You can install and run FinnGet using PowerShell.
 
 ## Table of Contents
 - [PowerShell Gallery](#powershell-gallery)
 - [Installation](#installation)
-  - [Windows 10](#windows-10)
+  - [Windows 10 and Windows 11](#windows-10-and-windows-11)
     - [Manual Installation](#manual-installation)
     - [Automated Installation](#automated-installation)
-  - [Windows 11](#windows-11)
   - [Setting Execution Policy](#setting-execution-policy)
   - [Dealing with Security Warnings](#dealing-with-security-warnings)
 - [Updating](#updating)
@@ -24,7 +23,14 @@ https://www.powershellgallery.com/packages/finnget
 
 ## Installation
 
-### Windows 10
+### Windows 10 and Windows 11
+
+#### Automated Installation
+
+FinnGet is available on PowerShell Gallery. Open PowerShell as an administrator and execute the following command:
+```powershell
+Install-Module -Name finnget -Scope AllUsers
+```
 
 #### Manual Installation
 
@@ -38,16 +44,6 @@ https://www.powershellgallery.com/packages/finnget
    ```
 6. You can now utilize the FinnGet command in any PowerShell terminal.
 
-#### Automated Installation
-
-FinnGet is now available on PowerShell Gallery. Open PowerShell as an administrator and execute the following command:
-```powershell
-Install-Module -Name finnget -Scope AllUsers
-```
-
-### Windows 11
-
-**Note: As of now, FinnGet doesn't work on Windows 11 due to being unsigned. If you manage to make it work on Windows 11, please share your findings. Thanks in advance!**
 
 ### Setting Execution Policy
 
@@ -55,7 +51,7 @@ To run FinnGet, set the execution policy to RemoteSigned. Open PowerShell as an 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
-This will enable local script execution while still requiring signed remote scripts. Please note that it may not work on Windows 11.
+This will enable local script execution while still requiring signed remote scripts.
 
 ### Dealing with Security Warnings
 
