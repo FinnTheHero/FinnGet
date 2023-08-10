@@ -156,7 +156,7 @@ Function Get-RAM {
 Function Get-Disks {
     $formattedDisks = @()
 
-    $logicalDisks = Get-CimInstance Win32_LogicalDisk | Where-Object { $_.DeviceID -match '^[A-Z]:' }
+    $logicalDisks = Get-WmiObject Win32_LogicalDisk | Where-Object { $_.DeviceID -match '^[A-Z]:' }
 
     foreach ($logicalDisk in $logicalDisks) {
         $diskID = $logicalDisk.DeviceId
