@@ -21,6 +21,7 @@ Function Get-WindowsArt()
             '          ```^^^^  MMMMMMMMMMMMMMMMMMM       ',
             '                        ```^^^^^^MMMMM       ',
             '                                             ',
+            '                                             ',
             '                                             ';
     
     return $ArtArray;
