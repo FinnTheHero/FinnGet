@@ -5,7 +5,7 @@
    FinnGet is designed specifically for Windows systems and can be installed and run using PowerShell.
 
 ## Table of Contents
-
+   - [PowerShell Gallery](#powershell-gallery)
    - [Installation](#installation)
       - [Windows10](#windows10)
          -[Manual](#manual)
@@ -18,6 +18,10 @@
    - [Project Status](#project-status)
    - [Contributing](#contributing)
 
+## PowerShell Gallery
+```
+https://www.powershellgallery.com/packages/finnget
+```
 ## Installation
 
    ### Windows10
