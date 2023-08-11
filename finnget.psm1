@@ -1,6 +1,17 @@
 Function finnget()
 {
-    $AsciiArt = . Get-WindowsArt;
+
+    $OperatingSystem = Get-OS
+
+    if ($OperatingSystem -match "Windows 10") {
+        $AsciiArt = . Get-Windows10Art;
+    } elseif ($OperatingSystem -match "Windows 11") {
+        $AsciiArt = . Get-Windows11Art;
+    } else {
+        Write-Error "Unsupported operating system: $OperatingSystem";
+        $AsciiArt = . Get-SkullArt;
+        return;
+    }
 
     $SystemInfoCollection = . Get-SystemSpecifications;
     $LineToTitleMappings = . Get-LineToTitleMappings;

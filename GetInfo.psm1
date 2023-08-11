@@ -17,11 +17,10 @@ Function Get-SystemSpecifications()
     $RAM = Get-RAM;
     $Disks = Get-Disks;
     $emptySpace = "";
-    $disVer = "1.7";
+    $disVer = "1.8";
 
     [System.Collections.ArrayList] $SystemInfoCollection = 
         $UserInfo,
-        $emptySpace,
         $disVer,
         $OS, 
         $Kernel,
@@ -48,21 +47,21 @@ Function Get-SystemSpecifications()
 Function Get-LineToTitleMappings() 
 { 
     $TitleMappings = @{
-        0 = "User: ";
-        1 = "";
-        2 = "FinnGet Version: ";
-        3 = "OS: "; 
-        4 = "Kernel: ";
-        5 = "Uptime: ";
-        6 = "Motherboard: ";
-        7 = "Shell: ";
-        8 = "Resolution: ";
-        9 = "Window Manager: ";
-        10 = "Font: ";
-        11 = "";
-        12 = "CPU: ";
-        13 = "GPU ";
-        14 = "RAM: ";
+        0 = "";
+        1 = "FinnGet Version: ";
+        2 = "OS: "; 
+        3 = "Kernel: ";
+        4 = "Uptime: ";
+        5 = "Motherboard: ";
+        6 = "Shell: ";
+        7 = "Resolution: ";
+        8 = "Window Manager: ";
+        9 = "Font: ";
+        10 = "";
+        11 = "CPU: ";
+        12 = "GPU ";
+        13 = "RAM: ";
+        14 = "";
     };
 
     return $TitleMappings;
@@ -71,7 +70,7 @@ Function Get-LineToTitleMappings()
 function Get-UserInformation {
     $username = $env:USERNAME
     $computerName = (Get-CimInstance Win32_ComputerSystem).Name
-    return "$username@$computerName"
+    return "$username @ $computerName"
 }
 
 function Get-OS {
