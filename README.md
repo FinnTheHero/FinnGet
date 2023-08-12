@@ -17,6 +17,7 @@ FinnGet is a Windows PowerShell script that offers similar functionality to tool
 
 ## PowerShell Gallery
 Find FinnGet on PowerShell Gallery at:
+
 ```
 https://www.powershellgallery.com/packages/finnget
 ```
@@ -28,6 +29,7 @@ https://www.powershellgallery.com/packages/finnget
 #### Automated Installation
 
 FinnGet is available on PowerShell Gallery. Open PowerShell as an administrator and execute the following command:
+
 ```powershell
 Install-Module -Name finnget -Scope AllUsers
 ```
@@ -39,6 +41,7 @@ Install-Module -Name finnget -Scope AllUsers
 3. Open a PowerShell terminal with administrator privileges.
 4. Navigate to the extracted folder using the `cd` command.
 5. Move the FinnGet folder to the PowerShell modules directory:
+
    ```powershell
    Move-Item -Path .\FinnGet -Destination $env:ProgramFiles\WindowsPowerShell\Modules
    ```
@@ -48,6 +51,7 @@ Install-Module -Name finnget -Scope AllUsers
 ### Setting Execution Policy
 
 To run FinnGet, set the execution policy to RemoteSigned. Open PowerShell as an administrator and run:
+
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
@@ -56,6 +60,7 @@ This will enable local script execution while still requiring signed remote scri
 ### Dealing with Security Warnings
 
 On some systems, security warnings might be encountered, prompting for script permission every time. To bypass this, run the following command:
+
 ```powershell
 Set-ExecutionPolicy Bypass
 ```
@@ -63,6 +68,7 @@ Set-ExecutionPolicy Bypass
 ## Updating
 
 To update an existing FinnGet installation from PowerShell Gallery to a newer version, run the following command:
+
 ```powershell
 Install-Module -Name finnget -Force
 ```
@@ -70,6 +76,7 @@ Install-Module -Name finnget -Force
 ## Usage
 
 After installing FinnGet, you can use it to display system information in your PowerShell terminal. Open PowerShell and enter:
+
 ```powershell
 FinnGet
 ```

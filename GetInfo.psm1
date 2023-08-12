@@ -17,7 +17,7 @@ Function Get-SystemSpecifications()
     $RAM = Get-RAM;
     $Disks = Get-Disks;
     $emptySpace = "";
-    $disVer = "1.8";
+    $disVer = "1.9";
 
     [System.Collections.ArrayList] $SystemInfoCollection = 
         $UserInfo,

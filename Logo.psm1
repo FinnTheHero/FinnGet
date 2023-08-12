@@ -19,10 +19,7 @@ Function Get-Windows10Art()
             '   MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM       ',
             '   ^^^MMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM       ',
             '          ```^^^^  MMMMMMMMMMMMMMMMMMM       ',
-            '                        ```^^^^^^MMMMM       ',
-            '                                             ',
-            '                                             ',
-            '                                             ';
+            '                        ```^^^^^^MMMMM       ';
     
     return $ArtArray;
 }
@@ -49,10 +46,7 @@ Function Get-Windows11Art()
             '      #################  #################      ',
             '      #################  #################      ',
             '      #################  #################      ',
-            '      #################  #################      ',
-            '                                                ',
-            '                                                ',
-            '                                                ';
+            '      #################  #################      ';
     
     return $ArtArray;
 }
@@ -84,8 +78,12 @@ Function Get-SkullArt()
             "     \_  \          /,L]     /               ",
             "       '-_~-,       ` `   ./`                ",
             "           '{_            )                  ",
-            "              ^^\..___,.--`                  ",
-            "                                             ";
+            "              ^^\..___,.--`                  ";
     
     return $ArtArray;
+}
+
+Function Get-EmptySpace()
+{
+    return "                                             ";
 }
