@@ -17,7 +17,7 @@ Function Get-SystemSpecifications()
     $RAM = Get-RAM;
     $Disks = Get-Disks;
     $emptySpace = "";
-    $disVer = "1.9";
+    $disVer = "2.0";
 
     [System.Collections.ArrayList] $SystemInfoCollection = 
         $UserInfo,
@@ -151,12 +151,10 @@ Function Get-RAM {
     return $ramInfo
 }
 
-
-
 Function Get-Disks {
     $formattedDisks = @()
 
-    $logicalDisks = Get-CimInstance Win32_LogicalDisk | Where-Object { $_.DeviceID -match '^[A-Z]:' }
+    $logicalDisks = Get-CimInstance Win32_LogicalDisk
 
     foreach ($logicalDisk in $logicalDisks) {
         $diskID = $logicalDisk.DeviceID
@@ -164,35 +162,56 @@ Function Get-Disks {
         $freeDiskSizeGB = [math]::Round($logicalDisk.FreeSpace / 1GB)
         $driveType = $logicalDisk.DriveType
 
-        if ($driveType -eq 5) {
-	        if ($diskSizeGB -gt 0) {
-                $usedDiskSizeGB = $diskSizeGB - $freeDiskSizeGB
-                $usedDiskPercent = [math]::Round(($usedDiskSizeGB / $diskSizeGB) * 100)
+        $diskDrive = Get-CimInstance Win32_DiskDrive
 
-                $formattedDisk = "Optical Disk $diskID $usedDiskSizeGB GB / $diskSizeGB GB ($usedDiskPercent%)"
-            } else {
-                $formattedDisk = "Optical Drive $diskID -- Empty --"
+        $interface = $diskDrive.InterfaceType
+
+        switch ($driveType) {
+            5 { # Optical Drive
+                if ($diskSizeGB -gt 0) {
+                    $usedDiskSizeGB = $diskSizeGB - $freeDiskSizeGB
+                    $usedDiskPercent = [math]::Round(($usedDiskSizeGB / $diskSizeGB) * 100)
+
+                    $formattedDisk = "Optical Drive $diskID $usedDiskSizeGB GB / $diskSizeGB GB ($usedDiskPercent%)"
+                } else {
+                    $formattedDisk = "Optical Drive $diskID -- Empty --"
+                }
             }
-        } elseif ($driveType -eq 3) {
-	        if ($diskSizeGB -gt 0) {
-                $usedDiskSizeGB = $diskSizeGB - $freeDiskSizeGB
-                $usedDiskPercent = [math]::Round(($usedDiskSizeGB / $diskSizeGB) * 100)
+            3 { # Internal Disk
+                if ($diskSizeGB -gt 0) {
+                    $usedDiskSizeGB = $diskSizeGB - $freeDiskSizeGB
+                    $usedDiskPercent = [math]::Round(($usedDiskSizeGB / $diskSizeGB) * 100)
 
-                $formattedDisk = "Disk $diskID $usedDiskSizeGB GB / $diskSizeGB GB ($usedDiskPercent%)"
-            } else {
-                $formattedDisk = "Disk $diskID -- Empty --"
-            }		
-	} elseif ($driveType -eq 2) {
-            if ($diskSizeGB -gt 0) {
-                $usedDiskSizeGB = $diskSizeGB - $freeDiskSizeGB
-                $usedDiskPercent = [math]::Round(($usedDiskSizeGB / $diskSizeGB) * 100)
+                    if ($interface -eq "USB") {
+                        $diskType = "External" 
+                    }else{
+                        $diskType = "Internal"
+                    }
 
-                $formattedDisk = "Flash Drive $diskID $usedDiskSizeGB GB / $diskSizeGB GB ($usedDiskPercent%)"
-            } else {
-                $formattedDisk = "Flash Drive $diskID -- Empty --"
+                    $formattedDisk = "$diskType Drive $diskID $usedDiskSizeGB GB / $diskSizeGB GB ($usedDiskPercent%)"
+                } else {
+                    $formattedDisk = "$diskType Drive $diskID  -- Empty --"
+                }
             }
-        } else {
-            $formattedDisk = "Unknown Drive Type $diskID"
+            2 { # Flash Drive
+                if ($diskSizeGB -gt 0) {
+                    $usedDiskSizeGB = $diskSizeGB - $freeDiskSizeGB
+                    $usedDiskPercent = [math]::Round(($usedDiskSizeGB / $diskSizeGB) * 100)
+                    $formattedDisk = "Flash Drive $diskID $usedDiskSizeGB GB / $diskSizeGB GB ($usedDiskPercent%)"
+                } else {
+                    $formattedDisk = "Flash Drive $diskID -- Empty --"
+                }
+            }
+            default { # Unknown Drive Type
+                if ($diskSizeGB -gt 0) {
+                    $usedDiskSizeGB = $diskSizeGB - $freeDiskSizeGB
+                    $usedDiskPercent = [math]::Round(($usedDiskSizeGB / $diskSizeGB) * 100)
+
+                    $formattedDisk = "(Unknown) Disk $diskID $usedDiskSizeGB GB / $diskSizeGB GB ($usedDiskPercent%)"
+                } else {
+                    $formattedDisk = "(Unknown) Disk $diskID -- Empty --"
+                }
+            }
         }
 
         $formattedDisks += $formattedDisk
@@ -200,4 +219,3 @@ Function Get-Disks {
 
     return $formattedDisks
 }
-
